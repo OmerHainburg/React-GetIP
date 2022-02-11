@@ -43,6 +43,7 @@ import './App.css';
 import axios from 'axios';
 import {useEffect, useState} from 'react'
 import React  from 'react';
+import {Loader, LoaderOptions} from 'google-maps';
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
     console.log(userLocation)
   }, []);
 
+
   return (
     <div className="App">
       <header className="App-header">
@@ -87,6 +89,8 @@ function App() {
           "Loading..."
         )}
         </p>
+
+       
         
       </header>
     </div>
