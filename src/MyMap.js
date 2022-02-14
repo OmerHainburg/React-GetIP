@@ -1,10 +1,25 @@
-import React from "react"
-import { Map, Marker } from "pigeon-maps"
+import React, { useState, useEffect } from 'react'
+import { Map, Marker } from 'pigeon-maps'
 
-export function MyMap() {
-    return (
-      <Map height={300} width={500} defaultCenter={[50.879, 4.6997]} defaultZoom={11}>
-        <Marker width={50} anchor={[50.879, 4.6997]} />
-      </Map>
-    )
-  }
+export default function MyMap(props) {
+  const [center, setCenter] = useState([50.2069, 9.23418])
+  const [zoom, setZoom] = useState(11)
+
+  useEffect(() => {
+    setCenter([props.props.lat, props.props.lng])
+  }, [])
+  console.log(center)
+  return (
+    <Map 
+      height={300}
+      center={center} 
+      zoom={zoom} 
+      onBoundsChanged={({ center, zoom }) => { 
+        setCenter(center) 
+        setZoom(zoom) 
+      }} 
+    >
+      <Marker width={50} anchor={center} />
+    </Map>
+  )
+}
