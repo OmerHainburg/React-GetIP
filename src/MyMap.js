@@ -4,12 +4,12 @@ import { Map, Marker } from 'pigeon-maps'
 export default function MyMap(props) {
   const [center, setCenter] = useState([50.2069, 9.23418])
   const [zoom, setZoom] = useState(11)
-
+  console.log(props) ;
   useEffect(() => {
     setCenter([props.props.lat, props.props.lng])
   }, [])
 
-  
+
   return (
     <Map 
       height={300}
@@ -20,7 +20,7 @@ export default function MyMap(props) {
         setZoom(zoom) 
       }} 
     >
-      <Marker width={50} anchor={center} />
+     <Marker width={50} anchor={center} /> 
     </Map>
   )
 }

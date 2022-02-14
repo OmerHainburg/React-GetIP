@@ -52,8 +52,8 @@ function App() {
     city: "Loading",
     country: "Loading",
     geonameId: 0,
-    lat: 0,
-    lng: 0,
+    lat: 50.2069,
+    lng: 9.23418,
     postalCode: "Loading",
     region: "Loading",
     timezone: "Loading"
@@ -66,6 +66,7 @@ function App() {
           `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_IPIFY_KEY}`
         )
         .then((response) => {
+          console.log(response);
           setUserIP(response.data.ip);
           setUserLocation(response.data.location);
         })
