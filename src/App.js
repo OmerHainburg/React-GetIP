@@ -43,7 +43,9 @@ import './App.css';
 import axios from 'axios';
 import {useEffect, useState} from 'react'
 import React  from 'react';
-import {Loader, LoaderOptions} from 'google-maps';
+import { MyMap } from './MyMap';
+//import { Map, Marker } from "pigeon-maps"
+
 
 
 function App() {
@@ -89,9 +91,11 @@ function App() {
           "Loading..."
         )}
         </p>
-
-       
-        
+        <p>Maps Location</p>
+          <MyMap />    
+          <br>
+            
+          </br>   
       </header>
     </div>
   );
