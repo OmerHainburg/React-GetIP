@@ -49,14 +49,14 @@ import CountryInfo from './CountryInfo';
 function App() {
   const [userIP, setUserIP] = useState();
   const [userLocation, setUserLocation] = useState({
-    city: "",
-    country: "",
+    city: "Loading",
+    country: "Loading",
     geonameId: 0,
     lat: 0,
     lng: 0,
-    postalCode: "",
-    region: "",
-    timezone: ""
+    postalCode: "Loading",
+    region: "Loading",
+    timezone: "Loading"
   });
 
   useEffect(() => {
