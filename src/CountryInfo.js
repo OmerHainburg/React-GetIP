@@ -6,8 +6,7 @@ const CountryInfo = ({ userCountry }) => {
   const [countryInfo, setCountryInfo] = useState();
   const [date, setDate] = useState(DateTime.now().c)
   const [dateGermany, setDateGermany] = useState(DateTime.local().setZone("Europe/Berlin"))
-  console.log(dateGermany)
-
+  
   useEffect(() => {
     const fetchCountryInfo = async () => {
       await axios
